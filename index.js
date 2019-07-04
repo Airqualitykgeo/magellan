@@ -4,12 +4,13 @@ const events = require('events');
 const request = require('request');
 
 var emitter = new events.EventEmitter();
+var cron = require('node-cron');
 
 const url1 = 'https://www.aismagellan.io/api/things/pull/f15819e0-f0e5-11e8-a028-9771a15972bf';
 const url2 = 'https://www.aismagellan.io/api/things/pull/0afa72d0-f0e6-11e8-a028-9771a15972bf';
 const url3 = 'https://www.aismagellan.io/api/things/pull/0f7c5170-f0e6-11e8-a028-9771a15972bf';
 
-setInterval(() => {
+cron.schedule('*/30 * * * * *', function () {
     //Get body from url1
     https.get(url1, res => {
         res.setEncoding('utf8');
@@ -24,9 +25,9 @@ setInterval(() => {
             emitter.emit('url1Ready');
         });
     });
-}, 30000);
+});
 
-setInterval(() => {
+cron.schedule('*/30 * * * * *', function () {
     //Get body from url2
     https.get(url2, res => {
         res.setEncoding('utf8');
@@ -41,9 +42,9 @@ setInterval(() => {
             emitter.emit('url2Ready');
         });
     });
-}, 30000);
+});
 
-setInterval(() => {
+cron.schedule('*/30 * * * * *', function () {
     //Get body from url3
     https.get(url3, res => {
         res.setEncoding('utf8');
@@ -58,7 +59,7 @@ setInterval(() => {
             emitter.emit('url3Ready');
         });
     });
-}, 30000);
+});
 
 //Save to DB
 emitter.on('url1Ready', (newBody) => {
