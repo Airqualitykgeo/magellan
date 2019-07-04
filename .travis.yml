@@ -2,4 +2,4 @@ language: node_js
 node_js: "8"
 script: echo "Deploy!!"
 install: npm install mongoose & npm install https & npm install events & npm install request
-after_success: node index.js
+after_success: npm start
