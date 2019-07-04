@@ -25,6 +25,9 @@ cron.schedule('*/30 * * * * *', function () {
             emitter.emit('url1Ready');
         });
     });
+
+    return null;
+
 });
 
 cron.schedule('*/30 * * * * *', function () {
@@ -42,6 +45,9 @@ cron.schedule('*/30 * * * * *', function () {
             emitter.emit('url2Ready');
         });
     });
+
+    return null;
+
 });
 
 cron.schedule('*/30 * * * * *', function () {
@@ -59,6 +65,9 @@ cron.schedule('*/30 * * * * *', function () {
             emitter.emit('url3Ready');
         });
     });
+
+    return null;
+    
 });
 
 //Save to DB
