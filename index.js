@@ -2,6 +2,7 @@ const Station = require('./modules/Station');
 const https = require('https');
 const events = require('events');
 const request = require('request');
+
 var emitter = new events.EventEmitter();
 
 const url1 = 'https://www.aismagellan.io/api/things/pull/f15819e0-f0e5-11e8-a028-9771a15972bf';
