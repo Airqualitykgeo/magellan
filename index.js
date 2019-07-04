@@ -70,15 +70,15 @@ emitter.on('url1Ready', (newBody) => {
 
     request('http://202.44.12.165/api/' + newBody.stationId + '/qW0dwEYTN9zrX9Gr0hC7qgmjj4YaBIvT/' + body.tempValue + '/' + body.co2Value + '/' + body.humidValue + '/' + body.dustValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
+        return console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
     });
     request('https://api.thingspeak.com/update?api_key=JVC2YONU82R0A43D&field1=' + body.tempValue + '&field2=' + body.co2Value + '&field3=' + body.humidValue + '&field4=' + body.dustValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved to Thingspeak!`);
+        return console.log(`Station ${newBody.stationId} has been saved to Thingspeak!`);
     });
     request('https://api.thingspeak.com/update?api_key=YLZQHMC0SCK8PBY2&field1=' + body.tempValue + '&field2=' + body.humidValue + '&field3=' + body.co2Value + '&field4=' + body.dustValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved by KGEO to Thingspeak!`);
+        return console.log(`Station ${newBody.stationId} has been saved by KGEO to Thingspeak!`);
     });
 
 });
@@ -91,11 +91,11 @@ emitter.on('url2Ready', (newBody) => {
 
     request('http://202.44.12.165/api/' + newBody.stationId + '/qW0dwEYTN9zrX9Gr0hC7qgmjj4YaBIvT/' + body.tempValue + '/' + body.co2Value + '/' + body.humidValue + '/' + body.dustValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
+        return console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
     });
     request('http://www.innosoft.kmutt.ac.th/icoccac/api.php?location=3&pm1=0&pm25=' + body.dustValue + '&pm10=0&temp=' + body.tempValue + '&humi=' + body.humidValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved to innosoft!`);
+        return console.log(`Station ${newBody.stationId} has been saved to innosoft!`);
     });
 
 });
@@ -108,7 +108,7 @@ emitter.on('url3Ready', (newBody) => {
 
     request('http://202.44.12.165/api/' + newBody.stationId + '/qW0dwEYTN9zrX9Gr0hC7qgmjj4YaBIvT/' + body.tempValue + '/' + body.co2Value + '/' + body.humidValue + '/' + body.dustValue, (err) => {
         if (err) { return console.log(err); }
-        console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
+        return console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
     });
 
 });
