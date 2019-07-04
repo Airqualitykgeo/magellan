@@ -1,5 +1,5 @@
 language: node_js
 node_js: "8"
-install: npm install
 script: echo "Deploy!!"
+install: npm install mongoose & npm install https & npm install events & npm install request
 after_success: npm start
