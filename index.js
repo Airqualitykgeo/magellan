@@ -81,6 +81,8 @@ emitter.on('url1Ready', (newBody) => {
         return console.log(`Station ${newBody.stationId} has been saved by KGEO to Thingspeak!`);
     });
 
+    return null;
+
 });
 
 emitter.on('url2Ready', (newBody) => {
@@ -98,6 +100,8 @@ emitter.on('url2Ready', (newBody) => {
         return console.log(`Station ${newBody.stationId} has been saved to innosoft!`);
     });
 
+    return null;
+
 });
 
 emitter.on('url3Ready', (newBody) => {
@@ -110,5 +114,7 @@ emitter.on('url3Ready', (newBody) => {
         if (err) { return console.log(err); }
         return console.log(`Station ${newBody.stationId} has been saved to MySQL!`);
     });
+
+    return null;
 
 });
